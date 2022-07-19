@@ -2,14 +2,14 @@
 
 Heavy repositories consist of the following
 
-- Json models
-- A client
-- A repository contract and implementation
-- Model classes
-- Interceptors (optional)
-- Extensions (optional)
+* Json models
+* A client
+* A repository contract and implementation
+* Model classes
+* Interceptors (optional)
+* Extensions (optional)
 
-A typical heavy repository will look like  👇
+A typical heavy repository will look like 👇
 
 ```
 my_repository
@@ -40,8 +40,6 @@ my_repository
     └── src
         └── my_repository_test.dart
 ```
-
-
 
 ### [Json Models](https://github.com/hiranthaR/Json-to-Dart-Model#convert-from-directory)
 
@@ -81,11 +79,9 @@ To add this to our json models, simple create a new `.jsonc` file in the `.json_
 
 There are a few differences between this and the original json file
 
-- Its in a list `[]`: Thats because one `.jsonc` file can containe one or more json models.
-- We added a `__className`: This tells the generator the name of the model class. We chose user to the model will have a class name `User`.
-- We added a `__path`: This tells the generator where we want the model to be generated.
-
-
+* Its in a list `[]`: Thats because one `.jsonc` file can containe one or more json models.
+* We added a `__className`: This tells the generator the name of the model class. We chose user to the model will have a class name `User`.
+* We added a `__path`: This tells the generator where we want the model to be generated.
 
 ## Client
 
@@ -107,18 +103,16 @@ abstract class MyRepositoryClient {
 }
 ```
 
-
-
 ## Repository
 
-Repositories are responsible for communicating with external data sources such as `server` via an `api`, they are also responsible transforming, decoding, caching, etc, the returned data. 
+Repositories are responsible for communicating with external data sources such as `server` via an `api`, they are also responsible transforming, decoding, caching, etc, the returned data.
 
 Repositories must return either a valid response or a parsed error message to the calling class. For me, this is achieved using the `Either` type from [`fp-dart`](https://pub.dev/packages/fpdart).
 
-Ideally your should have 
+Ideally your should have
 
-- one repository abstract class eg `i_my_repository.dart`, 
-- one concrete implementation of abstract class eg `my_repository.dart`.
+* one repository abstract class eg `i_my_repository.dart`,
+* one concrete implementation of abstract class eg `my_repository.dart`.
 
 Example abstract class 👇
 
@@ -198,38 +192,30 @@ class MyRepository implements IMyRepository {
 }
 ```
 
-
-
 ## Models
 
-Models are dart classes that "model" the response we expect or requests we send to the API. 
+Models are dart classes that "model" the response we expect or requests we send to the API.
 
 Model callses should have the following properties
 
-- Should support value equality
-- Should be serializable
-- Models should also contain business logic that express how they are meant to be modified. More on that [here](https://codewithandrea.com/articles/flutter-app-architecture-domain-model/#business-logic-in-the-model-classes).
-
-
+* Should support value equality
+* Should be serializable
+* Models should also contain business logic that express how they are meant to be modified. More on that [here](https://codewithandrea.com/articles/flutter-app-architecture-domain-model/#business-logic-in-the-model-classes).
 
 ## Interceptors
 
-Repositories can contain http interceptors, they can be useful if you want to carry out actions in response to certain requests. More information about interceptors can be found [here]([Interceptors](https://pub.dev/packages/dio#interceptors)). 
+Repositories can contain http interceptors, they can be useful if you want to carry out actions in response to certain requests. More information about interceptors can be found [here](../\[Interceptors]\(https:/pub.dev/packages/dio/#interceptors\)).
 
 Interceptors should be located in `src/interceptors/`.
 
-
-
 ## Extensions
 
-Extension methods are a nice way to add extra utility to our model classes. 
+Extension methods are a nice way to add extra utility to our model classes.
 
 Extensions should be located in `src/extensions/`.
-
-
 
 ## 🧱 Template
 
 Creating heavy repositories manually requires quite a bit of boilerplate, I've created a brick template to help you create one faster.
 
-Installation and usage instructions can be found [here](https://brickhub.dev/bricks/heavy_repository_package).
+Installation and usage instructions can be found [here](https://brickhub.dev/bricks/heavy\_repository\_package).

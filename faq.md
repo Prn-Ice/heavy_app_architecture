@@ -1,4 +1,8 @@
-# FAQ
+---
+description: Frequently asked questions.
+---
+
+# ❓ FAQ
 
 ## What version number to start with?
 
@@ -13,4 +17,3 @@ Yes. Yes you should.
 If the API is still in it's early stages yes, definitely. Trying to integrate an API thats still very much in active development can be a pain, when you're building out the UI can lead to a lot of unused code.
 
 If the API is ready, then its up to you, whatever works for you.
-
