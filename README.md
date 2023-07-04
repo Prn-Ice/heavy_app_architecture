@@ -1,13 +1,13 @@
 # 🏋 Heavy Flutter Architecture
 
-The **heavy** architecture is the architecture used in creating **flutter** apps at **Chigisoft**.
+The **heavy** architecture is an architecture I use in creating **flutter** apps.
 
 An app architecture defines the boundaries between parts of the app and the responsibilities each part should have
 
 The motivations for this and previous architectures were
 
 * To separate the UI from the business logic: The view should handle as little logic as possible, all others should be handled in controllers, services, repositories or even models.
-* To provide a well documented method of operation for mobile developers working on projects at chigisoft.
+* To provide a well documented method of operation for mobile developers working on projects.
 * To provide an architecture that allows for easy testing and separation of concerns.
 
 The architecture looks a lot like the MVVM pattern, combining concepts from [Stacked](https://pub.dev/packages/stacked), the [GetX Pattern](https://github.com/kauemurakami/getx\_pattern), reso coders [Clean Architecture](https://resocoder.com/2019/08/27/flutter-tdd-clean-architecture-course-1-explanation-project-structure/), Andrea's [Riverpod Architecture](https://codewithandrea.com/articles/flutter-app-architecture-riverpod-introduction/) and the [BloC Architecture](https://bloclibrary.dev/#/architecture).
